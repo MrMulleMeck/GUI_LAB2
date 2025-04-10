@@ -1,6 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:lab2/widgets/ingredient_control.dart';
 import 'package:lab2/widgets/kitchen_control.dart';
+import 'package:lab2/widgets/difficulty_control.dart';
+import 'package:lab2/widgets/price_control.dart';
+import 'package:lab2/widgets/time_control.dart';
+import 'package:lab2/widgets/recipe_list.dart';
+import 'package:lab2/widgets/recipe_detail.dart';
+import 'package:lab2/widgets/recipe_area.dart';
 
 class MainView extends StatelessWidget {
   const MainView({super.key});
@@ -11,7 +17,8 @@ class MainView extends StatelessWidget {
       body: Row(
         children: [
           _controlPanel(context), 
-          Expanded(child: _recipeArea(context))
+          const Expanded(child: RecipeArea())
+
         ]
       ),
     );
@@ -57,16 +64,36 @@ class MainView extends StatelessWidget {
                 CuisineControl(),
             ]
           ),
+
+        SizedBox(height: 16),
+
+        Text(
+          'Svårhetsgrad:',
+           style: TextStyle(fontSize: 18),
+        ),
+
+        
+            
+        DifficultyControl(),
+
+         Text(
+          'Maxpris:',
+           style: TextStyle(fontSize: 18),
+        ),
+
+        PriceControl(),
+        SizedBox(height: 22),
+
+            Text(
+          'Maxtid:',
+           style: TextStyle(fontSize: 18),
+        ),
+
+        TimeControl(),
+
         ]
       )
       );
   }
 
-  Widget _recipeArea(context) {
-   return Expanded(
-      child: Container(
-        color: const Color.fromARGB(255, 204, 216, 176)
-      ),
-   );
-}
 }
