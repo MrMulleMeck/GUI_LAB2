@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:lab2/model/recipe_database/recipe_handler.dart';
-
+import 'package:lab2/app_theme.dart';
 import 'package:provider/provider.dart';
 
 class PriceControl extends StatefulWidget {
@@ -29,7 +29,15 @@ class _PriceControlState extends State<PriceControl> {
           });
         },
       ),
-      Text('${_price.round()} kr'),
+      Row(
+        mainAxisAlignment: MainAxisAlignment.end,
+        children: [
+          Padding(
+            padding: const EdgeInsets.only(right: AppTheme.paddingLarge),
+            child: Text('${_price.round()} kr'),
+            ),
+          ],
+      ),
      ],
  );
 }
