@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:lab2/model/recipe_database/recipe_handler.dart';
 import 'package:lab2/app_theme.dart';
 import 'package:provider/provider.dart';
+import 'package:lab2/constants/assets.dart';
 
 class PriceControl extends StatefulWidget {
   const PriceControl({super.key});
@@ -32,6 +33,7 @@ class _PriceControlState extends State<PriceControl> {
       Row(
         mainAxisAlignment: MainAxisAlignment.end,
         children: [
+          const Icon(Icons.attach_money, size: 16),
           Padding(
             padding: const EdgeInsets.only(right: AppTheme.paddingLarge),
             child: Text('${_price.round()} kr'),

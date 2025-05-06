@@ -36,8 +36,12 @@ class _TimeControlState extends State<TimeControl> {
       children: [
         Image.asset(Assets.timeIcon, height: 16),
         Padding(
-          padding: const EdgeInsets.symmetric(horizontal: AppTheme.paddingLarge),
+          
+          padding: const EdgeInsets.only(right: AppTheme.paddingLarge, left: AppTheme.paddingTiny
+          ),
+          
           child: Text('${_price.round()} minuter'),
+          
         ),
     ],
 ),

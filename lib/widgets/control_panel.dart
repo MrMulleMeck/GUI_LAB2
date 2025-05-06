@@ -26,8 +26,17 @@ class ControlPanel extends StatelessWidget {
           ),
           const SizedBox(height: 16),
 
+          Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 36.0),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
           IngredientControl(),
+          const SizedBox(height: 16),
           CuisineControl(),
+        ],
+      ),
+    ),
           const SizedBox(height: 16),
 
           const Text('Svårhetsgrad:', style: TextStyle(fontSize: 18)),
