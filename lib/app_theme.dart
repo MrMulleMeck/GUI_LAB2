@@ -20,6 +20,11 @@ class AppTheme {
   static const TextStyle mediumHeading = TextStyle(
   fontSize: 18,
   fontWeight: FontWeight.bold,
+  );
+  
+  static const TextStyle largeHeading = TextStyle(
+    fontSize: 32, 
+    fontWeight: FontWeight.w400,
 );
 
 

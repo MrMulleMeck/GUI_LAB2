@@ -5,6 +5,7 @@ import 'package:provider/provider.dart';
 import 'package:lab2/app_theme.dart';
 import 'package:lab2/util/main_ingredient.dart';
 import 'package:lab2/util/difficulty.dart';
+import 'package:lab2/pages/detail_view.dart';
 
 
 class RecipeListItem extends StatelessWidget {
@@ -15,9 +16,23 @@ class RecipeListItem extends StatelessWidget {
   final void Function() onTap;
 
   @override
+
 Widget build(BuildContext context) {
   var uiController = Provider.of<UIController>(context, listen: false);
     return Card(
+      elevation: 4,
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+      child: InkWell(
+        borderRadius: BorderRadius.circular(12),
+        splashColor: Colors.blue.withAlpha(30),
+        onTap: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => DetailView(recipe),
+              ),
+            );
+        },
     child: Container(
       height: 128,
       child: Row(
@@ -70,6 +85,7 @@ Row(
        ],
      ),
     ),
+  ),
   );
   }
   Widget _image(Recipe recipe) {
